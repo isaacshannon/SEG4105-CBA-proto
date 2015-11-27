@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 public class AccountsActivity extends AppCompatActivity {
     /**
@@ -103,7 +104,7 @@ public class AccountsActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_accounts, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            TextView textView = (TextView) rootView.findViewById(R.id.textView);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
@@ -122,7 +123,8 @@ public class AccountsActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            return new AccountsFragment();
+            //return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
@@ -135,11 +137,11 @@ public class AccountsActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Accounts";
                 case 1:
-                    return "SECTION 2";
+                    return "Transfer";
                 case 2:
-                    return "SECTION 3";
+                    return "External";
             }
             return null;
         }
