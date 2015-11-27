@@ -18,6 +18,8 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
     <style name="SmallButtonStyle">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">@drawable/exersciz_button_background</item>
         <item name="android:layout_width">80sp</item>
         <item name="android:layout_height">36sp</item>
         <item name="android:textSize">18sp</item>
