@@ -55,12 +55,11 @@
     </EditText>
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/submit_button"
         style="@style/SmallButtonStyle"
         android:layout_alignRight="@+id/passwordField"
         android:layout_below="@+id/passwordField"
         android:layout_marginTop="20sp"
         android:text="Submit"/>
-
 
 </RelativeLayout>
