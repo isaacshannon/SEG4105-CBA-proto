@@ -9,13 +9,15 @@
         android:visibility="invisible"
         android:layout_width="50dp"
         android:layout_height="26dip"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:ellipsize="marquee"
         android:singleLine="true"
+        android:layout_marginRight="5dp"
         android:text="From"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="12sp" />
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/secondLine"
@@ -26,7 +28,7 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:text="Account"
-        android:textSize="12sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/firstLine"
@@ -38,6 +40,6 @@
         android:layout_alignWithParentIfMissing="true"
         android:gravity="center_vertical"
         android:text="Amount"
-        android:textSize="16sp" />
+        android:textSize="20sp" />
 
 </RelativeLayout> 

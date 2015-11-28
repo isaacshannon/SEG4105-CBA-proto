@@ -23,6 +23,11 @@
             android:label="@string/title_activity_accounts"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".TransferActivity"
+            android:label="@string/title_activity_transfer"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

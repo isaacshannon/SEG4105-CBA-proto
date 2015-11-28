@@ -1,8 +1,10 @@
 package com.studio.wri.cba_app;
+import java.io.Serializable;
 /**
  * Created by isaac on 2015-11-28.
  */
-public class UserAccountModel {
+@SuppressWarnings("serial") //With this annotation we are going to hide compiler warnings
+public class UserAccountModel implements Serializable {
     Account[] accounts = {new Account("Checking",5700.00),
             new Account("Savings",14803.47),
             new Account("Student Loan",22380.86),
@@ -35,6 +37,14 @@ public class UserAccountModel {
         }
 
         return amounts;
+    }
+
+    public String getSenderAccount(){
+        return accounts[transferFromAccount].type;
+    }
+
+    public String getReceiverAccount(){
+        return accounts[transferToAccount].type;
     }
 
 

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.studio.wri.cba_app.TransferActivity"
+    tools:showIn="@layout/activity_transfer">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Transfer Amount:"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="6"
+        android:id="@+id/editText"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/bar1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:src="@drawable/green_bar"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/senderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Checking"
+        android:layout_below="@+id/bar1"
+        android:layout_alignParentLeft = "true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/senderAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="$607.00"
+        android:layout_below="@+id/senderName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <ImageView
+        android:id="@+id/arrowImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/arrow_icon"
+        android:layout_below="@id/bar1"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:id="@+id/receiverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Visa"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/senderName"
+        android:layout_alignLeft="@+id/receiverAmount"
+        android:layout_alignStart="@+id/receiverAmount"
+        />
+
+    <TextView
+        android:id="@+id/receiverAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="$300.00"
+        android:layout_below="@+id/receiverName"
+        android:layout_alignParentRight="true"
+        />
+
+    <ImageView
+        android:id="@+id/bar2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:src="@drawable/green_bar"
+        android:layout_below="@+id/arrowImage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:id="@+id/cancelButton"
+        style="@style/SmallButtonStyle"
+        android:text="Cancel"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/arrowImage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:id="@+id/acceptButton"
+        style="@style/SmallButtonStyle"
+        android:text="Accept"
+        android:layout_alignTop="@+id/cancelButton"
+        android:layout_alignRight="@+id/receiverAmount"
+        android:layout_alignEnd="@+id/receiverAmount"/>
+
+
+
+
+</RelativeLayout>

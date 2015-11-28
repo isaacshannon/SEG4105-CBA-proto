@@ -20,10 +20,10 @@
     <style name="SmallButtonStyle">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:background">@drawable/exersciz_button_background</item>
-        <item name="android:layout_width">80sp</item>
+        <item name="android:layout_width">100sp</item>
         <item name="android:layout_height">36sp</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">sans-serif-condensed-light</item>
+        <!--item name="android:fontFamily">sans-serif-condensed-light</item>-->
     </style>
 
     <style name="TextFieldStyle">
@@ -46,7 +46,7 @@
         <item name="android:layout_width">220dp</item>
         <item name="android:layout_height">100dp</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_alignParentTop">true</item>
     </style>
 

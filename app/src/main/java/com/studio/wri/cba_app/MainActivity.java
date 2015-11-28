@@ -1,4 +1,5 @@
 package com.studio.wri.cba_app;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -120,5 +121,11 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    public void startTransferActivity(){
+        Intent i = new Intent(this, TransferActivity.class);
+        i.putExtra("model", model);
+        startActivity(i);
     }
 }

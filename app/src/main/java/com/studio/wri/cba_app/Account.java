@@ -1,8 +1,9 @@
 package com.studio.wri.cba_app;
+import java.io.Serializable;
 /**
  * Created by isaac on 2015-11-27.
  */
-public class Account {
+public class Account implements Serializable {
     public String type;
     public Double amount;
 

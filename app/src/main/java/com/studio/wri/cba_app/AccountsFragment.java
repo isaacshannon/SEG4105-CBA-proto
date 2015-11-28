@@ -28,7 +28,7 @@ public class AccountsFragment extends ListFragment implements OnItemClickListene
         MainActivity mainActivity = ((MainActivity)getActivity());
         model = mainActivity.model;
 
-        ArrayAdapter adapter = new TransferAdapter(this.getActivity(),model.getAccountTypes(),model.getAccountAmounts());
+        ArrayAdapter adapter = new AccountsAdapter(this.getActivity(),model.getAccountTypes(),model.getAccountAmounts());
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }
