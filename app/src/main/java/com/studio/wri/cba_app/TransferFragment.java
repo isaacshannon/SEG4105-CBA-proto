@@ -11,12 +11,14 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
-public class AccountsFragment extends ListFragment implements OnItemClickListener {
+public class TransferFragment extends ListFragment implements OnItemClickListener {
+    String[] accounts = {"Checking","Savings","VISA"};
+    String[] amounts = {"$6660.00","$6660.00","$666.00"};
     UserAccountModel model;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_accounts, container, false);
+        View view = inflater.inflate(R.layout.fragment_transfer, container, false);
         return view;
     }
 
@@ -35,6 +37,25 @@ public class AccountsFragment extends ListFragment implements OnItemClickListene
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-        //Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+
+
+
+        //if there is a from account, set a to account
+        if(model.transferFromAccount > -1 && model.transferFromAccount != position){
+            model.transferToAccount = position;
+        } //if there is no from account, use this one
+        else if(model.transferFromAccount == -1){
+            model.transferFromAccount = position;
+        } //if this is the from account, deselect it
+        else if(model.transferFromAccount == position){
+            model.transferFromAccount = -1;
+        }
+
+        View operation = view.findViewById(R.id.operation);
+        if(model.transferFromAccount == position) {
+            operation.setVisibility(View.VISIBLE);
+        }else{
+            operation.setVisibility(View.INVISIBLE);
+        }
     }
 }

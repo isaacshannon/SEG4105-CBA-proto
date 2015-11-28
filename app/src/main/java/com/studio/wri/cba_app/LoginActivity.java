@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) { //travel to the exercise display screen
-                Intent intent = new Intent(context, AccountsActivity.class);
+                Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
             }
         });

@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AccountsActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_accounts"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

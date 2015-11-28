@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AccountsAdapter extends ArrayAdapter<String> {
@@ -26,7 +25,7 @@ public class AccountsAdapter extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.row_layout, parent, false);
+        View rowView = inflater.inflate(R.layout.accounts_row_layout, parent, false);
 
         TextView accountText = (TextView) rowView.findViewById(R.id.firstLine);
         TextView amountText = (TextView) rowView.findViewById(R.id.secondLine);
