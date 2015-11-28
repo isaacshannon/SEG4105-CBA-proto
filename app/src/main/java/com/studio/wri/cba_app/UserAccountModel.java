@@ -47,6 +47,10 @@ public class UserAccountModel implements Serializable {
         return accounts[transferToAccount].type;
     }
 
+    public String performTransfer(int sender, int receiver, double amount){
+        return null;
+    }
+
 
 
 }

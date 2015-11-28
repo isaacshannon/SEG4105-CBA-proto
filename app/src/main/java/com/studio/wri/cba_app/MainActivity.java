@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.Serializable;
 public class MainActivity extends AppCompatActivity {
     public UserAccountModel model = new UserAccountModel();
     /**
@@ -38,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accounts);
+
+        //check if an existing user account has been passed
+        Intent i = getIntent();
+        Serializable extras = i.getSerializableExtra("model");
+        if(extras != null) {
+            model = (UserAccountModel) i.getSerializableExtra("model");
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
