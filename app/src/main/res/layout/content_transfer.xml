@@ -26,11 +26,11 @@
         android:textStyle="bold"/>
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="6"
-        android:id="@+id/editText"
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/textView2"
         android:layout_toEndOf="@+id/textView2" />
@@ -67,6 +67,8 @@
 
     <ImageView
         android:id="@+id/arrowImage"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:src="@drawable/arrow_icon"

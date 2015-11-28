@@ -6,9 +6,11 @@ import java.io.Serializable;
 public class Account implements Serializable {
     public String type;
     public Double amount;
+    public boolean isDebt;
 
-    public Account(String type, Double amount){
+    public Account(String type, Double amount, boolean isDebt){
         this.type = type;
         this.amount = amount;
+        this.isDebt = isDebt;
     }
 }

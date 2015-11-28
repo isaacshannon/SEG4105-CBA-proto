@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TransferFragment extends ListFragment implements OnItemClickListener {
@@ -54,11 +55,11 @@ public class TransferFragment extends ListFragment implements OnItemClickListene
             model.transferFromAccount = -1;
         }
 
-        View operation = view.findViewById(R.id.operation);
         if(model.transferFromAccount == position) {
-            operation.setVisibility(View.VISIBLE);
+            TextView accountName = (TextView)view.findViewById(R.id.firstLine);
+            accountName.setText("From: "+model.getSenderAccountName());
+            accountName.setTextColor(getResources().getColor(R.color.colorPrimary));
         }else{
-            operation.setVisibility(View.INVISIBLE);
         }
     }
 }

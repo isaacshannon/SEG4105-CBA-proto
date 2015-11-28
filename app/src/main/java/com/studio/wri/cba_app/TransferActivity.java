@@ -8,10 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 public class TransferActivity extends AppCompatActivity {
     UserAccountModel model;
     private Button cancelButton;
     private Button acceptButton;
+    private TextView senderName;
+    private TextView senderAmount;
+    private TextView receiverName;
+    private TextView receiverAmount;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +39,17 @@ public class TransferActivity extends AppCompatActivity {
             }
         });
 
-        initButtons();
+        initViews();
     }
 
-    private void initButtons(){
+    private void initViews(){
         final Context context = this;
         cancelButton = (Button) findViewById(R.id.cancelButton);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) { //travel to the exercise display screen
+            public void onClick(View arg0) {
+                model.transferFromAccount = -1;
+                model.transferToAccount = -1;
                 Intent intent = new Intent(context, MainActivity.class);
                 intent.putExtra("model", model);
                 startActivity(intent);
@@ -49,16 +58,27 @@ public class TransferActivity extends AppCompatActivity {
         acceptButton = (Button) findViewById(R.id.acceptButton);
         acceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) { //travel to the exercise display screen
+            public void onClick(View arg0) {
                 transferRequest();
                 Intent intent = new Intent(context, MainActivity.class);
                 intent.putExtra("model", model);
                 startActivity(intent);
             }
         });
+        editText = (EditText) findViewById(R.id.editText);
+
+        senderName = (TextView) findViewById(R.id.senderName);
+        senderName.setText(model.getSenderAccountName());
+        senderAmount = (TextView) findViewById(R.id.senderAmount);
+        senderAmount.setText(model.getSenderAccountAmount());
+        receiverName = (TextView) findViewById(R.id.receiverName);
+        receiverName.setText(model.getReceiverAccountName());
+        receiverAmount = (TextView) findViewById(R.id.receiverAmount);
+        receiverAmount.setText(model.getReceiverAccountAmount());
     }
 
     private void transferRequest(){
-       model.performTransfer(0,1,55.50);
+        double amount = Double.valueOf(String.valueOf(editText.getText()));
+        model.performTransfer(amount);
     }
 }
