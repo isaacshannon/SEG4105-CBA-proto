@@ -31,11 +31,6 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".HelpActivity"
-            android:label="@string/title_activity_help"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
             android:name=".TransactionsActivity"
             android:label="@string/title_activity_transactions"
             android:theme="@style/AppTheme.NoActionBar">

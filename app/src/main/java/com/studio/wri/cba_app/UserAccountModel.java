@@ -10,8 +10,12 @@ public class UserAccountModel implements Serializable {
             new Account("Student Loan",22380.86,true),
             new Account("VISA",800.00,true) };
 
+    String[] transactions = {"-90.00 Lowes Canada", "+1480.00 Interbank Pay", "-12.30 Tim Hortons",
+        "-16.00 Bookstore"};
+
     public int transferFromAccount = -1;
     public int transferToAccount = -1;
+    public int selectedAccount = 0;
 
     public UserAccountModel(){
 

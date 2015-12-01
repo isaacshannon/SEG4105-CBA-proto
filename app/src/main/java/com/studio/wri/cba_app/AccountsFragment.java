@@ -1,4 +1,5 @@
 package com.studio.wri.cba_app;
+import android.content.Intent;
 import android.support.v4.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -35,6 +36,9 @@ public class AccountsFragment extends ListFragment implements OnItemClickListene
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-        //Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+        model.selectedAccount = position;
+        Intent i = new Intent(getActivity(), TransactionsActivity.class);
+        i.putExtra("model", model);
+        startActivity(i);
     }
 }
